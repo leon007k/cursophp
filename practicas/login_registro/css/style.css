@@ -1,0 +1,20 @@
+body {
+  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+}
+
+.card-link {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.division {
+  border: 2px solid #a71814;
+  opacity: 1;
+  border-radius: 5px;
+}
+
+.card-footer {
+  background-color: transparent;
+  margin-top: 20px;
+}
+/*# sourceMappingURL=style.css.map */

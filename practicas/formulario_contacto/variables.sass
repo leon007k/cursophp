@@ -1,0 +1,27 @@
+$border-b: border-box
+@mixin responsive ($breakpoint)
+  @if $breakpoint == phones 
+    @media (max-width: 768px)
+       @content 
+  @if $breakpoint == tablet
+    @media (min-width: 768px) and (max-width:991px)
+      @content 
+  @if $breakpoint == laptop
+    @media (min-width: 992px) and (max-width: 1199px)
+      @content 
+  @if $breakpoint == desktop
+    @media (min-width: 1200px)
+      @content
+  @if $breakpoint == min-tablet
+    @media (min-width: 768px)
+      @content
+  @if $breakpoint == min-laptop
+    @media (min-width: 992px)
+      @content
+  
+
+@mixin flex($direction)
+  @if $direction == center 
+    display: flex
+    align-items: center
+    justify-content: center

@@ -1,0 +1,142 @@
+@import variables.sass
+
+* 
+  padding: 0
+  margin: 0
+  -webkit-box-sizing: $border-b
+  -moz-box-sizing: $border-b
+  box-sizing: $border-b
+
+body
+  background: url(img/bg.jpg) no-repeat
+  background-size: auto
+  font-size: 16px
+  font-family: 'Lato',Helvetica,sans-serif
+
+.row 
+  @include flex(center)
+  padding: 24px
+  
+@include responsive(phones)
+  .col-12
+    width: 100%
+    flex: 0 0 auto
+
+@include responsive(min-tablet)
+  .col-sm-12
+    widows: 100%  
+
+@include responsive(min-laptop)
+  .col-md-6
+    width: 50%
+
+.col-12.col-sm-12.col-md-6 
+  border-radius: 6px
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2)
+  background: #fff
+  padding: 24px
+  @include responsive(phones)
+    padding: 20px
+
+.container
+  width: 90%
+  margin: 0 auto
+  @include responsive (desktop )
+    max-width: 1140px
+  @include responsive (laptop)
+    max-width: 960px
+  @include responsive (tablet)
+    max-width: 720px
+  @include responsive (phones)
+    max-width: 540px
+
+h1 
+  font-size: calc(1.375rem + 1.5vw) 
+  margin-top: 15px
+  margin-bottom: 20px
+  font-weight: bold
+  text-align: center
+  color: #198754
+  @include responsive (phones)
+    text-align: left
+
+p
+  font-size: 16px
+  margin-bottom: 15px
+
+form
+  margin-bottom: 16px
+
+.form-control
+  margin-bottom: 15px
+  border-radius: 3px
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  width: 100% !important
+  padding: 15px 10px
+  line-height: 1.5
+  display: block
+  color: #1a1b1c
+  background-color: #fff
+  background-clip: padding-box
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+  font-family: 'Lato',Helvetica,sans-serifa
+
+.form-control:placeholder
+  color: rgba(255, 255, 255, 0.15)
+
+.form-control:focus 
+  color: #212529
+  border-color: #86b7fe
+  outline: 0
+  box-shadow: 0 0 0 0.25rem rgba(13,110,253, .25)
+
+.btn
+  padding: 6px 12px 
+  border-radius: 3px
+  display: inline-block
+  line-height: 1.5
+  text-align: center
+  text-decoration: none
+  border: 1px solid transparent
+  cursor: pointer
+  font-family: 'Lato', Arial, Helvetica, sans-serif
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+
+.btn-primary
+  color: #fff
+  background-color: #0d6efd
+  border-color: #0d6efd
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active
+  color: #fff
+  background-color: #0b5ed7
+  border-color: #0b5ed7
+
+.float-end 
+  float: right
+
+.form-control textarea#message
+  width: 100% !important
+  max-width: 100% !important
+  min-width: 100% !important
+  resize: vertical !important
+
+.alert
+  padding: 20px 10px
+  font-family: 'Lato',Helvetica,sans-serif
+  font-weight: 500
+  border: 1px solid transparent
+  border-radius: 4px
+  position: relative
+  margin-top: 15px
+  margin-bottom: 15px
+
+.alert-success
+  color: #0f5132
+  background-color: #d1e7dd
+  border-color: #badbcc
+
+.alert-error
+  color: #842029
+  background-color: #f8d7da
+  border-color: #f5c2c7
