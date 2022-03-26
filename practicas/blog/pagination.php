@@ -5,25 +5,29 @@
       <ul class="pagination">
         <?php if(actual_page() == 1){?>
         <li class="page-item disabled">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
+            <span class="page-link" aria-hidden="true">&laquo;</span>
         </li>
         <?php } else { ?>
          <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
+          <a class="page-link" href="index.php?page=<?php echo actual_page() - 1; ?>" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
         <?php } ?>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <?php for($i = 1; $i <= $num_page; $i++){?>
+          <li class="page-item <?php echo actual_page() === $i ? 'active' : ' ';?>"><a class="page-link" href="index.php?page=<?php echo $i?>"><?php echo $i; ?></a></li>
+        <?php } ?>
+        <?php if(actual_page() != $num_page){?>
         <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
+          <a class="page-link" href="index.php?page=<?php echo actual_page() + 1;?>" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
+        <?php }else{?>
+          <li class="page-item disabled">
+            <span class="page-link" aria-hidden="true">&raquo;</span>
+        </li>
+        <?php } ?>
       </ul>
     </nav>
  </div>

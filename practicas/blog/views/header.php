@@ -21,7 +21,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <form action="<?php echo ROUTE;?>/search.php" method="get" name="search" class="input-group mt-4 mt-md-0">
-        <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+        <input class="form-control" name="search" type="search" placeholder="Buscar" aria-label="Search">
         <button class="btn btn-outline-info" type="submit"><span class="iconify" data-icon="ant-design:search-outlined"></span></button>
       </form>
       <ul class="navbar-nav ms-md-4 mt-2 mt-md-0 social-media">

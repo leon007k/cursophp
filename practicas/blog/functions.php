@@ -15,7 +15,6 @@ function conection($bd_config){
 /**
  * * limpiamos los campos obtenidos del formulario
  */
-
 function sanitize($data){
   $sanitized = trim($data);
   $sanitized = stripslashes($sanitized);
@@ -35,7 +34,7 @@ function actual_page(){
 */
 function get_post($post_to_page, $conection){
   $start = (actual_page() > 1) ? actual_page() * $post_to_page - $post_to_page : 0;
-  $setence = $conection->prepare('SELECT * FROM articulos LIMIT ' . $start . $post_to_page);
+  $setence = $conection->prepare("SELECT * FROM articulos LIMIT $start, $post_to_page");
   $setence->execute();
   return $setence->fetchAll();
 }
@@ -51,7 +50,7 @@ function idArticule($id){
  * * Obtenemos el contenido del articulo
  */
 function get_post_to_id($conection, $id){
-  $result = $conection->prepare('SELECT * FROM articulos where id = :IdArticule');
+  $result = $conection->prepare('SELECT * FROM articulos where id = :IdArticule LIMIT 1');
   $result->execute(array(':IdArticule'=> $id));
   $result = $result->fetchAll();
   return ($result) ? $result : false;
