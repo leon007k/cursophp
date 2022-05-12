@@ -10,6 +10,10 @@ if(!$conection){
 
 $posts = get_post($blog_config['post_to_page'], $conection);
 
+//print_r($posts);
+
+$num_pages = numberPages($blog_config['post_to_page'], $conection, 'index.php');
+
 if(!$posts){
   header('Location: error.php');
 }

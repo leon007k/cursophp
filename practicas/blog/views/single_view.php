@@ -9,7 +9,8 @@
           <div class="thumb">
               <img src="<?php echo ROUTE;?>/imagenes/<?php echo $posts['thumb']?>" class="img-fluid" alt="<?php echo $posts['titulo']; ?>">
           </div>
-          <p class="extracto"><?php echo $posts['texto']; ?></p>
+          <? /* utilizamos la funcion nl2br para que respete el espacio o salto de linea obtenido desde la bd*/?>
+          <p class="extracto"><?php echo nl2br($posts['texto']); ?></p>
         </div>
     </div>
   </div>

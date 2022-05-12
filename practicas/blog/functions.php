@@ -59,14 +59,29 @@ function get_post_to_id($conection, $id){
 /**
  * * Obtenemos el numero de paginas
  */
-function numberPages($post_to_page, $conection){
+function numberPages($post_to_page, $conection, $name_page){
+  sanitize($name_page);
   $total_post = $conection ->prepare('SELECT count(*) as total from articulos');
   $total_post->execute();
   $total_post = $total_post->fetch()['total'];
 
   $num_pages = ceil($total_post / $post_to_page);
-  return $num_pages;
+  return array('num_pages' => $num_pages, 'name_page' => $name_page);
 }
+
+/**
+ * * Obtenemos nuemero de paginas acorde a la consulta realizada
+ * @void $post_to_page = cantidad de articulos a mostrar
+ * @void $conection = conexion a la base de datos
+ * @void $name_page = nombre de la pagina que utilizara la paginacion
+ */
+function GeneralNumberPages($post_to_page,$query, $name_page){
+  sanitize($name_page);
+  $total_post = $query;
+  $num_pages = ceil($total_post / $post_to_page);
+  return array('num_pages' => $num_pages, 'name_page' => $name_page);
+}
+
 
 /**
  * * Cambiamos el formato a la fecha
