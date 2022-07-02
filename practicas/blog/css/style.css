@@ -68,4 +68,8 @@ p.extracto {
 .adjust-content-page {
   height: calc(100vh - 142px);
 }
+
+.mr-1 {
+  margin-right: .5rem;
+}
 /*# sourceMappingURL=style.css.map */

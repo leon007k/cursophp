@@ -11,6 +11,7 @@ $bd_config = array(
 $blog_config = array(
   'post_to_page' => '2',
   'carpeta_images' => 'imagenes/',
+  'post_admin_page' => '4',
 );
 
 $blog_admin = array(

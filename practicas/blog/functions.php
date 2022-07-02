@@ -58,6 +58,9 @@ function get_post_to_id($conection, $id){
 
 /**
  * * Obtenemos el numero de paginas
+ * @void $post_to_page = cantidad de articulos a mostrar
+ * @void $conection = conexion a la base de datos
+ * @void $name_page = nombre de la pagina que utilizara la paginacion
  */
 function numberPages($post_to_page, $conection, $name_page){
   sanitize($name_page);
