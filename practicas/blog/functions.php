@@ -100,3 +100,13 @@ function formatdate($date){
   $date = $day . ' de ' . $months[$month] . ' del ' . $year;
   return $date;
 }
+
+/**
+ * * Verificar existencia de las sesion
+ * @ void $session sesion a verificar que este activa
+ */
+function existSession($session){
+  if(!isset($session)){
+    header('Location: ' . ROUTE);
+  }
+}
