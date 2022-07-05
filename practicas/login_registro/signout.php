@@ -3,5 +3,5 @@
 session_start();
 session_destroy();
 
-$_SESSIO[] = array();
+$_SESSION[] = array();
 header('Location: login.php');

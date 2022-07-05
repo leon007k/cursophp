@@ -15,6 +15,6 @@ $blog_config = array(
 );
 
 $blog_admin = array(
-  'usuario' => 'Carlos',
+  'usuario' => 'carlos',
   'password' => '123'
 );

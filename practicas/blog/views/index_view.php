@@ -21,4 +21,12 @@
 
     <?php require 'pagination.php'; ?>
   </div>
+   <script nonce rel="preload" as="script" async type="text/javascript">
+      // * Se agrega Jscrip para evitar huecos en el footer de la pagina
+      let post = document.querySelectorAll('.col-12.shadow.rounded');
+      if(post.length < 2){
+        let container = document.querySelector('#contentBlog');
+        container.classList.add('adjust-content-page');
+      }
+    </script>
 <?php require 'footer.php'; ?>

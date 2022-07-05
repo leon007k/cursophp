@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $pass = sanitize($_POST['password']);
 
   if($user == $blog_admin['usuario'] && $pass == $blog_admin['password']){
-    $_SESSION['admin'] = $blog_admin['user'];
+    $_SESSION['admin'] = $blog_admin['usuario'];
     header('Location: ' . ROUTE . '/admin');
   }
 }
